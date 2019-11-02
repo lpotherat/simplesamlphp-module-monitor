@@ -2,9 +2,11 @@
 
 namespace SimpleSAML\Module\Monitor\TestSuite\AuthSource;
 
+use KRB5NegotiateAuth;
 use SimpleSAML\Module\Monitor\TestConfiguration;
 use SimpleSAML\Module\Monitor\TestCase;
 use SimpleSAML\Module\Monitor\TestData;
+use Webmozart\Assert\Assert;
 
 final class Negotiate extends \SimpleSAML\Module\Monitor\TestSuiteFactory
 {
@@ -24,10 +26,11 @@ final class Negotiate extends \SimpleSAML\Module\Monitor\TestSuiteFactory
         $authSourceData = $testData->getInputItem('authSourceData');
         $serverVars = $configuration->getServerVars();
 
-        assert(is_array($authSourceData));
+        Assert::isArray($authSourceData);
+        Assert::keyExists($authSourceData, 'keytab');
+        $keytab = $authSourceData['keytab'];
 
-        $keytab = isset($authSourceData['keytab']) ? $authSourceData['keytab'] : null;
-        $this->handle = new \KRB5NegotiateAuth($keytab);
+        $this->handle = new KRB5NegotiateAuth($keytab);
         $this->authorization = $serverVars->get('HTTP_AUTHORIZATION');
         $this->setCategory('SPNEGO authentication source');
 

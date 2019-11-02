@@ -2,6 +2,7 @@
 
 namespace SimpleSAML\Module\Monitor\TestCase\AuthSource;
 
+use KRB5NegotiateAuth;
 use SimpleSAML\Module\Monitor\State;
 use SimpleSAML\Module\Monitor\TestData;
 use SimpleSAML\Module\Monitor\TestResult;

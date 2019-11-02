@@ -5,6 +5,7 @@ namespace SimpleSAML\Module\Monitor\TestCase\Store\Memcache;
 use SimpleSAML\Module\Monitor\State;
 use SimpleSAML\Module\Monitor\TestData;
 use SimpleSAML\Module\Monitor\TestResult;
+use Webmozart\Assert\Assert;
 
 final class ServerGroup extends \SimpleSAML\Module\Monitor\TestCaseFactory
 {
@@ -24,6 +25,9 @@ final class ServerGroup extends \SimpleSAML\Module\Monitor\TestCaseFactory
     {
         $this->results = $testData->getInputItem('results');
         $this->group = $testData->getInputItem('group');
+
+        Assert::isArray($this->results);
+        Assert::string($this->group);
 
         parent::initialize($testData);
     }

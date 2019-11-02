@@ -2,9 +2,11 @@
 
 namespace SimpleSAML\Module\Monitor\TestCase\AuthSource\Ldap;
 
+use SimpleSAML\Configuration as SspConfiguration;
 use SimpleSAML\Module\Monitor\State;
 use SimpleSAML\Module\Monitor\TestData;
 use SimpleSAML\Module\Monitor\TestResult;
+use Webmozart\Assert\Assert;
 
 final class Configuration extends \SimpleSAML\Module\Monitor\TestCaseFactory
 {
@@ -38,6 +40,8 @@ final class Configuration extends \SimpleSAML\Module\Monitor\TestCaseFactory
     protected function initialize(TestData $testData): void
     {
         $authSourceData = $testData->getInputItem('authSourceData');
+        Assert::isInstanceOf($authSourceData, SspConfiguration::class);
+
         $this->hostname = $authSourceData->getString('hostname', '<< unset >>');
         $this->port = $authSourceData->getInteger('port', 636);
         $this->enableTls = $authSourceData->getBoolean('enable_tls', false);

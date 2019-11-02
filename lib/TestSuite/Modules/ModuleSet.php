@@ -30,10 +30,21 @@ final class ModuleSet extends \SimpleSAML\Module\Monitor\TestSuiteFactory
      */
     public function __construct(TestConfiguration $configuration, TestData $testData)
     {
-        $this->setRequired($testData->getInputItem('required'));
-        $this->setAvailable($testData->getInputItem('available'));
-        $this->setDependencies($testData->getInputItem('dependencies'));
-        $this->setType($testData->getInputItem('type'));
+        $required = $testData->getInputItem('required');
+        $available = $testData->getInputItem('available');
+        $dependencies = $testData->getInputItem('dependencies');
+        $type = $testData->getInputItem('type');
+
+        Assert::isArray($required);
+        Assert::isArray($available);
+        Assert::isArray($dependencies);
+        Assert::string($type);
+
+        $this->setRequired($required);
+        $this->setAvailable($available);
+        $this->setDependencies($dependencies);
+        $this->setType($type);
+
         $this->setCategory($this->type . ' modules');
 
         parent::__construct($configuration);

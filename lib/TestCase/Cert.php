@@ -5,6 +5,7 @@ namespace SimpleSAML\Module\Monitor\TestCase;
 use SimpleSAML\Module\Monitor\State;
 use SimpleSAML\Module\Monitor\TestData;
 use SimpleSAML\Module\Monitor\TestResult;
+use Webmozart\Assert\Assert;
 
 class Cert extends \SimpleSAML\Module\Monitor\TestCaseFactory
 {
@@ -25,9 +26,17 @@ class Cert extends \SimpleSAML\Module\Monitor\TestCaseFactory
      */
     protected function initialize(TestData $testData): void
     {
-        $this->setCategory($testData->getInputItem('category'));
-        $this->setCertInfo($testData->getInputItem('certData'));
-        $this->setCertExpirationWarning($testData->getInputItem('certExpirationWarning'));
+        $category = $testData->getInputItem('category');
+        $certData = $testData->getInputItem('certData');
+        $certExpirationWarning = $testData->getInputItem('certExpirationWarning');
+
+        Assert::string($category);
+        Assert::isArray($certData);
+        Assert::integer($certExpirationWarning);
+
+        $this->setCategory($category);
+        $this->setCertInfo($certData);
+        $this->setCertExpirationWarning($certExpirationWarning);
 
         parent::initialize($testData);
     }

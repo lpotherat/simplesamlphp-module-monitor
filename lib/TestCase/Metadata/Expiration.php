@@ -35,7 +35,6 @@ final class Expiration extends \SimpleSAML\Module\Monitor\TestCaseFactory
     public function invokeTest(): void
     {
         $testResult = new TestResult('Metadata expiration', $this->entityId);
-
         if (array_key_exists('expire', $this->metadata)) {
             $expiration = $this->metadata['expire'];
             if ($expiration <= time()) {

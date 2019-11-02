@@ -2,6 +2,8 @@
 
 namespace SimpleSAML\Module\Monitor;
 
+use SimpleSAML\Utils\Arrays;
+
 final class TestData
 {
     /** @var array */
@@ -48,7 +50,7 @@ final class TestData
     {
         if (isset($this->testData[$key])) {
             assert(is_array($this->testData[$key]));
-            $this->testData[$key] = array_merge($this->testData[$key], $value);
+            $this->testData[$key] = array_merge($this->testData[$key], Arrays::arrayize($value));
         } else {
             $this->testData[$key] = $value;
         }

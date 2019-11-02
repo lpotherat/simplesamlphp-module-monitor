@@ -22,6 +22,7 @@ class TestMemcacheServerGroupTest extends \PHPUnit\Framework\TestCase
 
         $testData = new TestData([
             'results' => [$a, $a],
+            'group' => 'TestCase',
         ]);
         $testCase = new TestCase\Store\Memcache\ServerGroup($testData);
         $testResult = $testCase->getTestResult();
@@ -29,6 +30,7 @@ class TestMemcacheServerGroupTest extends \PHPUnit\Framework\TestCase
 
         $testData = new TestData([
             'results' => [$a, $b],
+            'group' => 'TestCase',
         ]);
         $testCase = new TestCase\Store\Memcache\ServerGroup($testData);
         $testResult = $testCase->getTestResult();
@@ -36,6 +38,7 @@ class TestMemcacheServerGroupTest extends \PHPUnit\Framework\TestCase
 
         $testData = new TestData([
             'results' => [$b, $b],
+            'group' => 'TestCase',
         ]);
         $testCase = new TestCase\Store\Memcache\ServerGroup($testData);
         $testResult = $testCase->getTestResult();

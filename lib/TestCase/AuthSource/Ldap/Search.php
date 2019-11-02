@@ -2,9 +2,12 @@
 
 namespace SimpleSAML\Module\Monitor\TestCase\AuthSource\Ldap;
 
+use SimpleSAML\Configuration;
+use SimpleSAML\Module\ldap\Auth\Ldap;
 use SimpleSAML\Module\Monitor\State;
 use SimpleSAML\Module\Monitor\TestData;
 use SimpleSAML\Module\Monitor\TestResult;
+use Webmozart\Assert\Assert;
 
 final class Search extends \SimpleSAML\Module\Monitor\TestCaseFactory
 {
@@ -32,10 +35,10 @@ final class Search extends \SimpleSAML\Module\Monitor\TestCaseFactory
     protected function initialize(TestData $testData): void
     {
         $authSourceData = $testData->getInputItem('authSourceData');
+        Assert::isInstanceOf($authSourceData, Configuration::class);
 
         // Just to be on the safe side, strip off any OU's and search to whole directory
-        $base = $authSourceData->getArrayizeString('search.base', '<< unset >>');
-        $base = is_array($base) ? $base[0] : $base;
+        $base = $authSourceData->getArrayizeString('search.base', '<< unset >>')[0];
         if (($i = intval(stripos($base, 'DC='))) > 0) {
             $base = substr($base, $i);
         }

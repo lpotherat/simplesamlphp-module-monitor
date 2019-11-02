@@ -2,9 +2,12 @@
 
 namespace SimpleSAML\Module\Monitor\TestCase\AuthSource\Ldap;
 
+use SimpleSAML\Configuration;
+use SimpleSAML\Module\ldap\Auth\Ldap;
 use SimpleSAML\Module\Monitor\State;
 use SimpleSAML\Module\Monitor\TestData;
 use SimpleSAML\Module\Monitor\TestResult;
+use Webmozart\Assert\Assert;
 
 final class Bind extends \SimpleSAML\Module\Monitor\TestCaseFactory
 {
@@ -27,6 +30,8 @@ final class Bind extends \SimpleSAML\Module\Monitor\TestCaseFactory
     {
         $this->connection = $testData->getInputItem('connection');
         $authSourceData = $testData->getInputItem('authSourceData');
+
+        Assert::isInstanceOf($authSourceData, Configuration::class);
 
         $this->username = $authSourceData->getString('search.username', '<< unset >>');
         $this->password = $authSourceData->getString('search.password', '<< unset >>');

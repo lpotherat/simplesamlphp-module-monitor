@@ -5,6 +5,7 @@ namespace SimpleSAML\Module\Monitor\TestCase;
 use SimpleSAML\Module\Monitor\State as State;
 use SimpleSAML\Module\Monitor\TestData as TestData;
 use SimpleSAML\Module\Monitor\TestResult as TestResult;
+use Webmozart\Assert\Assert;
 
 class Module extends \SimpleSAML\Module\Monitor\TestCaseFactory
 {
@@ -30,9 +31,13 @@ class Module extends \SimpleSAML\Module\Monitor\TestCaseFactory
         if (!is_null($available)) {
             $this->available = $available;
         }
+        Assert::string($this->module);
         $this->parsed = explode('|', $this->module);
 
-        $this->setCategory($testData->getInputItem('type'));
+        $category = $testData->getInputItem('type');
+        Assert::string($category);
+
+        $this->setCategory($category);
         parent::initialize($testData);
     }
 

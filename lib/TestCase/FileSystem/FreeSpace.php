@@ -5,6 +5,7 @@ namespace SimpleSAML\Module\Monitor\TestCase\FileSystem;
 use SimpleSAML\Module\Monitor\State;
 use SimpleSAML\Module\Monitor\TestData;
 use SimpleSAML\Module\Monitor\TestResult;
+use Webmozart\Assert\Assert;
 
 final class FreeSpace extends \SimpleSAML\Module\Monitor\TestCaseFactory
 {
@@ -19,8 +20,14 @@ final class FreeSpace extends \SimpleSAML\Module\Monitor\TestCaseFactory
      */
     protected function initialize(TestData $testData): void
     {
-        $this->setPath($testData->getInputItem('path'));
-        $this->setCategory($testData->getInputItem('category'));
+        $path = $testData->getInputItem('path');
+        $category = $testData->getInputItem('category');
+
+        Assert::string($path);
+        Assert::string($category);
+
+        $this->setPath($path);
+        $this->setCategory($category);
         parent::initialize($testData);
     }
 
