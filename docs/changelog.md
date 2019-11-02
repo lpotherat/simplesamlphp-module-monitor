@@ -6,9 +6,39 @@ Monitoring module changelog
 This document lists the changes between versions of this donitoring module.
 See the upgrade notes for specific information about upgrading.
 
-## Version 2.6.0
+## Version 3.0.0
 Released TBD
+- Raised PHP-version required to PHP 7.2
+- Upgraded PHPUnit and Psalm to the latest version
+- Improved test-suite
+- Take more advantage of test-framework
+- PSR-12 compliancy
+
+## Version 2.7.1
+Released 17-10-2019
+- Fixed buggy XML template
+
+## Version 2.7.0
+Released 29-07-2019
+- The minimum required version of SimpleSAMLphp is 1.17
+- Start using SimpleSAMLphp Test-framework
+- Add Twig-templates to make this module ready for 1.18 + newUI
+- Raised PHP-version required to 5.6
+
+## Version 2.6.2
+Released 17-05-2019
+- Fixed a bug where SSP uses PHPsessions and PHPsessions are configured to use memcache.
+
+## Version 2.6.1
+Released 13-05-2019
+- Fixed a bug where not all metadata would show in bridge-mode
+- Include a new text-only output format
+
+## Version 2.6.0
+Released 20-03-2019
 - Convert everything to namespaces
+- Minor fixes
+- Support SimpleSAMLphp 1.17
 
 ## Version 2.5.4
 Released 21-10-2018
