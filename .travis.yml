@@ -85,7 +85,7 @@ jobs:
     - stage: pre-conditions
       env: Syntax check YAML / XML / JSON
       before_script:
-        - composer install --ignore-platform-reqs
+        - composer install
       script:
         - vendor/simplesamlphp/simplesamlphp-test-framework/bin/check-syntax-json.sh
         - vendor/simplesamlphp/simplesamlphp-test-framework/bin/check-syntax-xml.sh
