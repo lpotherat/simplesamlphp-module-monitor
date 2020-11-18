@@ -1,13 +1,13 @@
 <?php
 
-namespace SimpleSAML\Module\Monitor\TestCase\Store\Memcache;
+namespace SimpleSAML\Module\monitor\TestCase\Store\Memcache;
 
-use SimpleSAML\Module\Monitor\State;
-use SimpleSAML\Module\Monitor\TestData;
-use SimpleSAML\Module\Monitor\TestResult;
+use SimpleSAML\Module\monitor\State;
+use SimpleSAML\Module\monitor\TestData;
+use SimpleSAML\Module\monitor\TestResult;
 use Webmozart\Assert\Assert;
 
-final class ServerGroup extends \SimpleSAML\Module\Monitor\TestCaseFactory
+final class ServerGroup extends \SimpleSAML\Module\monitor\TestCaseFactory
 {
     /** @var array */
     private $results = [];
@@ -17,7 +17,7 @@ final class ServerGroup extends \SimpleSAML\Module\Monitor\TestCaseFactory
 
 
     /**
-     * @param \SimpleSAML\Module\Monitor\TestData $testData
+     * @param \SimpleSAML\Module\monitor\TestData $testData
      *
      * @return void
      */

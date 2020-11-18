@@ -1,15 +1,15 @@
 <?php
 
-namespace SimpleSAML\Module\Monitor\TestCase\AuthSource\Ldap;
+namespace SimpleSAML\Module\monitor\TestCase\AuthSource\Ldap;
 
 use SimpleSAML\Configuration;
 use SimpleSAML\Module\ldap\Auth\Ldap;
-use SimpleSAML\Module\Monitor\State;
-use SimpleSAML\Module\Monitor\TestData;
-use SimpleSAML\Module\Monitor\TestResult;
+use SimpleSAML\Module\monitor\State;
+use SimpleSAML\Module\monitor\TestData;
+use SimpleSAML\Module\monitor\TestResult;
 use Webmozart\Assert\Assert;
 
-final class Search extends \SimpleSAML\Module\Monitor\TestCaseFactory
+final class Search extends \SimpleSAML\Module\monitor\TestCaseFactory
 {
     /** @var \SimpleSAML\Module\ldap\Auth\Ldap */
     private $connection;
@@ -28,7 +28,7 @@ final class Search extends \SimpleSAML\Module\Monitor\TestCaseFactory
 
 
     /**
-     * @param \SimpleSAML\Module\Monitor\TestData $testData
+     * @param \SimpleSAML\Module\monitor\TestData $testData
      *
      * @return void
      */

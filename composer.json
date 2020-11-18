@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SimpleSAML\\Module\\Monitor\\": "lib/"
+            "SimpleSAML\\Module\\monitor\\": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\SimpleSAML\\Module\\Monitor\\TestFiles\\": "tests/files",
+            "Tests\\SimpleSAML\\Module\\monitor\\TestFiles\\": "tests/files",
             "SimpleSAML\\Test\\Utils\\": "vendor/simplesamlphp/simplesamlphp/tests/Utils"
         }
     },
@@ -35,8 +35,8 @@
     "require-dev": {
         "ext-krb5": "*",
 
-        "simplesamlphp/simplesamlphp": "^1.18",
-        "simplesamlphp/simplesamlphp-test-framework": "^0.1.3",
+        "simplesamlphp/simplesamlphp": "dev-simplesamlphp-1.19",
+        "simplesamlphp/simplesamlphp-test-framework": "^0.2.7",
         "vimeo/psalm": "~3.6",
         "webmozart/assert": "<1.6"
     },

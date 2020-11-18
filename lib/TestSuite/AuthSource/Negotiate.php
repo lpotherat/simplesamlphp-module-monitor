@@ -1,14 +1,14 @@
 <?php
 
-namespace SimpleSAML\Module\Monitor\TestSuite\AuthSource;
+namespace SimpleSAML\Module\monitor\TestSuite\AuthSource;
 
 use KRB5NegotiateAuth;
-use SimpleSAML\Module\Monitor\TestConfiguration;
-use SimpleSAML\Module\Monitor\TestCase;
-use SimpleSAML\Module\Monitor\TestData;
+use SimpleSAML\Module\monitor\TestConfiguration;
+use SimpleSAML\Module\monitor\TestCase;
+use SimpleSAML\Module\monitor\TestData;
 use Webmozart\Assert\Assert;
 
-final class Negotiate extends \SimpleSAML\Module\Monitor\TestSuiteFactory
+final class Negotiate extends \SimpleSAML\Module\monitor\TestSuiteFactory
 {
     /** @var string|null */
     private $authorization;
@@ -18,8 +18,8 @@ final class Negotiate extends \SimpleSAML\Module\Monitor\TestSuiteFactory
 
 
     /**
-     * @param \SimpleSAML\Module\Monitor\TestConfiguration $configuration
-     * @param \SimpleSAML\Module\Monitor\TestData $testData
+     * @param \SimpleSAML\Module\monitor\TestConfiguration $configuration
+     * @param \SimpleSAML\Module\monitor\TestData $testData
      */
     public function __construct(TestConfiguration $configuration, TestData $testData)
     {

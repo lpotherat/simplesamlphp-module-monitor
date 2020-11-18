@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleSAML\Module\Monitor;
+namespace SimpleSAML\Module\monitor;
 
 use SimpleSAML\Utils\Arrays;
 
